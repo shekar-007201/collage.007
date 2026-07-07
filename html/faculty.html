@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty | SR&BGNR GOVT.ARTS & SCIENCE COLLAGE</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <span class="college-name">SR&BGNR GOVT.ARTS & SCIENCE COLLAGE</span
+          ><span class="college-sub"> AUTONOMOUS</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faculty.html" class="active">Faculty</a></li>
+            <li><a href="noticeboard.html">Notices</a></li>
+            <li><a href="fees.html">Fee Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Faculty & Staff</h1>
+        <p>Meet the dedicated educators shaping the next generation</p>
+    </div>
+
+    <section class="section">
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterFaculty('all', this)">
+          All Departments
+        </button>
+            <button class="filter-btn" onclick="filterFaculty('cse', this)">
+          Computer Science
+        </button>
+            <button class="filter-btn" onclick="filterFaculty('science', this)">
+          Sciences
+        </button>
+            <button class="filter-btn" onclick="filterFaculty('engineering', this)">
+          Engineering
+        </button>
+            <button class="filter-btn" onclick="filterFaculty('commerce', this)">
+          Commerce
+        </button>
+            <button class="filter-btn" onclick="filterFaculty('arts', this)">
+          Arts
+        </button>
+        </div>
+
+        <!-- Faculty Grid -->
+        <div class="faculty-grid" id="facultyGrid">
+            <div class="faculty-card" data-dept="cse">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #1a3c5e, #2980b9)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Rajesh Kumar</h3>
+                    <p class="faculty-role">Professor & HOD</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Computer Science
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – IIT Hyderabad
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 22 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="cse">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #1a3c5e, #8e44ad)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Priya Sharma</h3>
+                    <p class="faculty-role">Associate Professor</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Computer Science
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – BITS Pilani
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 15 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="engineering">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #7b3f00, #e67e22)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Suresh Reddy</h3>
+                    <p class="faculty-role">Professor & HOD</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Mechanical Engineering
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> M.Tech – NIT Warangal
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 18 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="science">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #2d6a4f, #27ae60)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Anitha Rao</h3>
+                    <p class="faculty-role">Professor</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Chemistry
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – OU Hyderabad
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 20 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="commerce">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #4a0e8f, #9b59b6)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Ramesh Naidu</h3>
+                    <p class="faculty-role">Professor & HOD</p>
+                    <p class="faculty-dept"><i class="fas fa-building"></i> Commerce</p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – Kakatiya University
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 25 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="arts">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #8b0000, #e74c3c)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Lakshmi Devi</h3>
+                    <p class="faculty-role">Associate Professor</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> English Literature
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – HCU Hyderabad
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 16 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="science">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #0d5c63, #1abc9c)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Venkat Swamy</h3>
+                    <p class="faculty-role">Assistant Professor</p>
+                    <p class="faculty-dept"><i class="fas fa-building"></i> Physics</p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> M.Sc – Osmania University
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 12 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="cse">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #2c3e50, #3498db)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Mr. Arun Teja</h3>
+                    <p class="faculty-role">Assistant Professor</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Computer Science
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> M.Tech – JNTU Hyderabad
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 8 Years Experience
+                    </p>
+                </div>
+            </div>
+
+            <div class="faculty-card" data-dept="engineering">
+                <div class="faculty-avatar" style="background: linear-gradient(135deg, #2c3e50, #e67e22)">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Kiran Babu</h3>
+                    <p class="faculty-role">Professor</p>
+                    <p class="faculty-dept">
+                        <i class="fas fa-building"></i> Civil Engineering
+                    </p>
+                    <p class="faculty-qual">
+                        <i class="fas fa-graduation-cap"></i> Ph.D – NIT Warangal
+                    </p>
+                    <p class="faculty-exp">
+                        <i class="fas fa-clock"></i> 19 Years Experience
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i> SR&BGNR GOVT.ARTS & SCIENCE COLLAGE
+                </div>
+                <p class="footer-desc">
+                    Empowering students with knowledge, values, and skills for a better tomorrow.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a
+            ><a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a
+            ><a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="noticeboard.html">Notice Board</a></li>
+                    <li><a href="fees.html">Fee Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> NH-163, Hanamkonda, Warangal, Telangana - 506001
+                </p>
+                <p><i class="fas fa-phone"></i> +91 870 246 8800</p>
+                <p><i class="fas fa-envelope"></i> info@vidyasagar.edu.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SR&BGNR GOVT.ARTS & SCIENCE COLLAGE. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

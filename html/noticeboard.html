@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notice Board | Sr & Bgnr Govt. College</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <span class="college-name">Sr & Bgnr Govt. College</span
+          ><span class="college-sub">College of Excellence</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="noticeboard.html" class="active">Notices</a></li>
+            <li><a href="fees.html">Fee Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Notice Board</h1>
+        <p>All official announcements, circulars, and updates</p>
+    </div>
+
+    <section class="section">
+        <!-- Search + Filter -->
+        <div class="notice-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="noticeSearch" placeholder="Search notices..." oninput="searchNotices()" />
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterNotices('all', this)">
+            All
+          </button>
+                <button class="filter-btn" onclick="filterNotices('exam', this)">
+            Exams
+          </button>
+                <button class="filter-btn" onclick="filterNotices('event', this)">
+            Events
+          </button>
+                <button class="filter-btn" onclick="filterNotices('scholarship', this)">
+            Scholarship
+          </button>
+                <button class="filter-btn" onclick="filterNotices('general', this)">
+            General
+          </button>
+            </div>
+        </div>
+
+        <!-- Notices List -->
+        <div class="notice-list" id="noticeList">
+            <div class="notice-item" data-cat="exam">
+                <div class="notice-left">
+                    <span class="notice-cat exam">Exam</span>
+                    <div>
+                        <h3>Semester End Examinations Schedule Released</h3>
+                        <p>
+                            The timetable for Semester V & VI examinations has been released. Exams will commence from April 5, 2025. Students must download their hall tickets from the student portal before April 1.
+                        </p>
+                    </div>
+                </div>
+                <div class="notice-meta">
+                    <span class="notice-date"><i class="fas fa-calendar"></i> March 12, 2025</span
+            >
+            <span class="badge">New</span>
+                    <a href="#" class="notice-download"><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="event">
+          <div class="notice-left">
+            <span class="notice-cat event">Event</span>
+            <div>
+              <h3>
+                Annual Cultural Festival "Utsav 2025" – Registrations Open
+              </h3>
+              <p>
+                The college annual cultural fest will be held on March 20–22,
+                2025. Students can register for events including dance, music,
+                drama, and fine arts. Registration deadline: March 15, 2025.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 10, 2025</span
+            >
+            <span class="badge">New</span>
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="scholarship">
+          <div class="notice-left">
+            <span class="notice-cat scholarship">Scholarship</span>
+            <div>
+              <h3>Post-Matric Scholarship Applications – OBC/SC/ST Students</h3>
+              <p>
+                Applications for Post-Matric Scholarships for OBC, SC, and ST
+                category students are now open. Submit applications at the
+                Scholarship Cell, Admin Block by March 25, 2025. Required
+                documents: Income certificate, caste certificate, and previous
+                marks card.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 8, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="general">
+          <div class="notice-left">
+            <span class="notice-cat general">General</span>
+            <div>
+              <h3>Final Year Project Submission Deadline Extended</h3>
+              <p>
+                The deadline for final year project report submission has been
+                extended to April 10, 2025. Students must submit both hard copy
+                and soft copy to their respective department coordinators. No
+                further extensions will be granted.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 7, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="event">
+          <div class="notice-left">
+            <span class="notice-cat event">Event</span>
+            <div>
+              <h3>National Level Hackathon – "CodeStorm 2025"</h3>
+              <p>
+                The CS Department is organizing a 24-hour hackathon on March
+                28–29, 2025. Teams of 2–4 students can participate. Problem
+                statements will be released on the event day. Registration link
+                available on the college portal.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 5, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="exam">
+          <div class="notice-left">
+            <span class="notice-cat exam">Exam</span>
+            <div>
+              <h3>Internal Assessment Marks Uploaded</h3>
+              <p>
+                Internal assessment marks for all semesters have been uploaded
+                on the student portal. Students with grievances regarding marks
+                may submit representations to their respective HODs by March 20,
+                2025.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 3, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="general">
+          <div class="notice-left">
+            <span class="notice-cat general">General</span>
+            <div>
+              <h3>Library Working Hours Extended During Exam Season</h3>
+              <p>
+                The college library will remain open from 7:00 AM to 10:00 PM
+                starting April 1, 2025, until the end of semester examinations.
+                Students with valid ID cards can use reading halls and digital
+                resources.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> March 1, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+
+        <div class="notice-item" data-cat="scholarship">
+          <div class="notice-left">
+            <span class="notice-cat scholarship">Scholarship</span>
+            <div>
+              <h3>
+                Merit Scholarship for Top 10 Students – Applications Invited
+              </h3>
+              <p>
+                The college is inviting applications for the Director's Merit
+                Scholarship worth ₹25,000 each for the top 10 students based on
+                academic performance. Apply with marks cards and recommendation
+                letter from the HOD.
+              </p>
+            </div>
+          </div>
+          <div class="notice-meta">
+            <span class="notice-date"
+              ><i class="fas fa-calendar"></i> Feb 25, 2025</span
+            >
+            <a href="#" class="notice-download"
+              ><i class="fas fa-download"></i> Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="no-notices" id="noNotices" style="display: none">
+        <i class="fas fa-search"></i>
+        <p>No notices found matching your search.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <i class="fas fa-graduation-cap"></i> SR & BGNR GOVT. College
+          </div>
+          <p class="footer-desc">
+            Empowering students with knowledge, values, and skills for a better
+            tomorrow.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a
+            ><a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a
+            ><a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="noticeboard.html">Notice Board</a></li>
+                    <li><a href="fees.html">Fee Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> NH-163,Khammam , Telangana - 507002
+                </p>
+                <p><i class="fas fa-phone"></i> +91 870 246 8800</p>
+                <p><i class="fas fa-envelope"></i> info@Sr&Bgnr.edu.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Sr & Bgnr Govt. College of Excellence. All rights reserved.
+        </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
