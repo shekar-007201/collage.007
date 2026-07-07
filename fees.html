@@ -1,0 +1,352 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fee Payment | SR&BGNR GOVT.ARTS & SCIENCE COLLAGE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <span class="college-name">SR&BGNR GOVT.ARTS & SCIENCE COLLAGE</span
+          ><span class="college-sub">AUTONOMOUS</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="noticeboard.html">Notices</a></li>
+            <li><a href="fees.html" class="active">Fee Payment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Fee Payment</h1>
+        <p>View fee structure and submit your payment details</p>
+    </div>
+
+    <section class="section">
+        <!-- Fee Structure -->
+        <div class="section-header">
+            <p class="section-tag">Academics 2025-26</p>
+            <h2>Fee Structure</h2>
+        </div>
+
+        <div class="fee-tabs">
+            <button class="fee-tab active" onclick="showFeeTable('ug', this)">
+          KU Programs
+        </button>
+        </div>
+
+        <div id="fee-ug" class="fee-table-wrap">
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Tuition Fee</th>
+                        <th>Exam Fee</th>
+                        <th>Other Charges</th>
+                        <th>Total (Per Year)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.Sc (CS)</td>
+                        <td>₹30,000(Free)</td>
+                        <td>₹3,500</td>
+                        <td>₹2,500(Free)</td>
+                        <td><strong>₹41,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>B.Sc (MPC)</td>
+                        <td>₹28,000(Free)</td>
+                        <td>₹3,000</td>
+                        <td>₹2,500(Free)</td>
+                        <td><strong>₹33,500</strong></td>
+                    </tr>
+                    <tr>
+                        <td>B.Com</td>
+                        <td>₹22,000(Free)</td>
+                        <td>₹2,500</td>
+                        <td>₹2,000(Free)</td>
+                        <td><strong>₹26,500</strong></td>
+                    </tr>
+                    <tr>
+                        <td>B.A (HEP)</td>
+                        <td>₹18,000(Free)</td>
+                        <td>₹2,000</td>
+                        <td>₹2,000(Free)</td>
+                        <td><strong>₹22,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>B.B.A</td>
+                        <td>₹30,000(Free)</td>
+                        <td>₹3,000</td>
+                        <td>₹2,500(Free)</td>
+                        <td><strong>₹35,500</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--<div id="fee-eng" class="fee-table-wrap" style="display: none">
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Tuition Fee</th>
+              <th>Exam Fee</th>
+              <th>Other Charges</th>
+              <th>Total (Per Year)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>B.Tech (CSE)</td>
+              <td>₹80,000</td>
+              <td>₹5,000</td>
+              <td>₹5,000</td>
+              <td><strong>₹90,000</strong></td>
+            </tr>
+            <tr>
+              <td>B.Tech (ECE)</td>
+              <td>₹75,000</td>
+              <td>₹5,000</td>
+              <td>₹5,000</td>
+              <td><strong>₹85,000</strong></td>
+            </tr>
+            <tr>
+              <td>B.Tech (Mech)</td>
+              <td>₹72,000</td>
+              <td>₹5,000</td>
+              <td>₹4,500</td>
+              <td><strong>₹81,500</strong></td>
+            </tr>
+            <tr>
+              <td>B.Tech (Civil)</td>
+              <td>₹70,000</td>
+              <td>₹5,000</td>
+              <td>₹4,500</td>
+              <td><strong>₹79,500</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      --->
+
+        <p class="fee-note">
+            <i class="fas fa-info-circle"></i> Note: Fees are subject to revision.Only Tuition fee is free for all the students. Hostel and transport fees are charged separately. Scholarships and fee waivers are available for eligible students.
+        </p>
+    </section>
+
+    <!-- Payment Form -->
+    <section class="section payment-section">
+        <div class="section-header">
+            <p class="section-tag">Online Payment</p>
+            <h2>Submit Fee Payment</h2>
+        </div>
+
+        <div class="payment-wrapper">
+            <div class="payment-form-box">
+                <div id="paySuccess" class="pay-success" style="display: none">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Payment Submitted Successfully!</h3>
+                    <p>
+                        Your fee payment request has been received. A confirmation will be sent to your registered email within 24 hours.
+                    </p>
+                    <p class="receipt-id">
+                        Receipt ID: <strong id="receiptId"></strong>
+                    </p>
+                    <button class="btn-primary" onclick="resetPayForm()">
+              Pay Another Fee
+            </button>
+                </div>
+
+                <div id="payForm">
+                    <h3 class="form-title">
+                        <i class="fas fa-rupee-sign"></i> Payment Details
+                    </h3>
+
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="payName" placeholder="Enter your full name" />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Roll Number *</label>
+                            <input type="text" id="payRoll" placeholder="e.g. CS2021045" />
+                        </div>
+                        <div class="form-group">
+                            <label>Academic Year *</label>
+                            <select id="payYear">
+                  <option value="">Select Year</option>
+                  <option>2025-26</option>
+                  <option>2024-25</option>
+                  <option>2023-24</option>
+                </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Department *</label>
+                            <select id="payDept">
+                  <option value="">Select Department</option>
+                  <option>Computer Science</option>
+                  <option>Engineering</option>
+                  <option>Commerce</option>
+                  <option>Sciences</option>
+                  <option>Arts & Humanities</option>
+                </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Fee Type *</label>
+                            <select id="payFeeType">
+                  <option value="">Select Type</option>
+                 <option>Tuition Fee</optio>
+                  <option>Exam Fee</option>
+                  <option>Supply Fee</option>
+                  
+                  <option>Other</option>
+                </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount (₹) *</label>
+                        <input type="number" id="payAmount" placeholder="Enter amount in rupees" />
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Mode *</label>
+                        <div class="payment-modes">
+                            <label class="mode-option"><input type="radio" name="mode" value="upi" checked /><i
+                    class="fas fa-mobile-alt"
+                  ></i>
+                  UPI</label
+                >
+                <label class="mode-option"
+                  ><input type="radio" name="mode" value="netbanking" /><i
+                    class="fas fa-university"
+                  ></i>
+                  Net Banking</label
+                >
+                <label class="mode-option"
+                  ><input type="radio" name="mode" value="card" /><i
+                    class="fas fa-credit-card"
+                  ></i>
+                  Card</label
+                >
+                <label class="mode-option"
+                  ><input type="radio" name="mode" value="challan" /><i
+                    class="fas fa-file-alt"
+                  ></i>
+                  Challan</label
+                >
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Transaction / Reference ID *</label>
+                            <input type="text" id="payTxn" placeholder="Enter transaction or UPI reference ID" />
+                        </div>
+                        <div class="form-group">
+                            <label>Remarks (Optional)</label>
+                            <textarea id="payRemarks" rows="2" placeholder="Any additional notes..."></textarea>
+                        </div>
+
+                        <div id="payError" class="pay-error" style="display: none"></div>
+
+                        <button class="btn-primary full-width" onclick="submitPayment()">
+              <i class="fas fa-paper-plane"></i> Submit Payment
+            </button>
+                    </div>
+                </div>
+
+                <div class="payment-info-box">
+                    <h3><i class="fas fa-info-circle"></i> Payment Guidelines</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-check"></i> Keep your transaction ID ready before filling the form
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Cross-check the amount with the fee structure above
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Confirmation will be sent to your registered email
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> For issues, contact the Accounts Office
+                        </li>
+                    </ul>
+                    <div class="bank-details">
+                        <h4><i class="fas fa-university"></i> Bank Details</h4>
+                        <p><strong>Bank:</strong> State Bank of India</p>
+                        <p><strong>Account Name:</strong> SR&BGNR COLLAGE</p>
+                        <p><strong>Account No:</strong> 3894 5678 ****</p>
+                        <p><strong>IFSC Code:</strong> SBIN00****</p>
+                        <p><strong>Branch:</strong> Indira Nagar Conoly, Khammam</p>
+                    </div>
+                    <div class="contact-accounts">
+                        <h4><i class="fas fa-phone"></i> Accounts Office</h4>
+                        <p>Mon–Sat: 9:00 AM – 4:00 PM</p>
+                        <p>+91 870 246 8801</p>
+                        <p>accounts@sr&bgnr.edu.in</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i> SR&BGNR GOVT.ARTS & SCIENCE COLLAGE
+                </div>
+                <p class="footer-desc">
+                    Empowering students with knowledge, values, and skills for a better tomorrow.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a
+            ><a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a
+            ><a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="noticeboard.html">Notice Board</a></li>
+                    <li><a href="fees.html">Fee Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> NH-163, Indira Nagar Conoly, Khammam, Telangana - 507002
+                </p>
+                <p><i class="fas fa-phone"></i> +91 870 246 8800</p>
+                <p><i class="fas fa-envelope"></i> info@sr@bgnr.edu.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SR&BGNR GOVT.ARTS & SCIENCE COLLAGE. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
